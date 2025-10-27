@@ -5,7 +5,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://http://minniyo.com
+ * @link       https://minniyo.com
  * @since      1.0.0
  *
  * @package    Minniyo_Chat

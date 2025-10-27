@@ -2,7 +2,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://http://minniyo.com
+ * @link       https://minniyo.com
  * @since      1.0.0
  *
  * @package    Minniyo_Chat

@@ -7,17 +7,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://http://minniyo.com
+ * @link              https://minniyo.com
  * @since             1.0.0
  * @package           Minniyo_Chat
  *
  * @wordpress-plugin
  * Plugin Name:       Minniyo Chat
- * Plugin URI:        https://http://minniyo.com
+ * Plugin URI:        https://minniyo.com
  * Description:       Connect your Minniyo Chatbot in WordPress Easily and Hassle Free.
  * Version:           1.0.0
  * Author:            Minniyo
- * Author URI:        https://http://minniyo.com/
+ * Author URI:        https://minniyo.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       minniyo-chat

@@ -422,6 +422,19 @@
   animation: spin 1s linear infinite;
 }
 
+.button.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.button.loading .dashicons[data-loading="false"] {
+  display: none;
+}
+
+.button.loading .dashicons[data-loading="true"] {
+  display: inline-block !important;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

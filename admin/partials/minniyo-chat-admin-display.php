@@ -4,7 +4,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://http://minniyo.com
+ * @link       https://minniyo.com
  * @since      1.0.0
  *
  * @package    Minniyo_Chat
@@ -99,7 +99,8 @@ $last_test_status = get_option( 'minniyo_chat_test_status', '' );
 						<?php esc_html_e( 'Test Connection', 'minniyo-chat' ); ?>
 					</button>
 					<button type="button" id="minniyo-save-settings" class="button button-primary">
-						<span class="dashicons dashicons-yes"></span>
+						<span class="dashicons dashicons-yes" data-loading="false"></span>
+						<span class="dashicons dashicons-admin-generic" data-loading="true" style="display: none;"></span>
 						<?php esc_html_e( 'Save Settings', 'minniyo-chat' ); ?>
 					</button>
 				</div>

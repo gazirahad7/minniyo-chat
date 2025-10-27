@@ -2,7 +2,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://http://minniyo.com
+ * @link       https://minniyo.com
  * @since      1.0.0
  *
  * @package    Minniyo_Chat
