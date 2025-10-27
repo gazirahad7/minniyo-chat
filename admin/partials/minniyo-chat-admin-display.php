@@ -65,7 +65,7 @@ $last_test_status = get_option( 'minniyo_chat_test_status', '' );
 						printf(
 							/* translators: %s: URL to setup page */
 							esc_html__( 'Get your API key from %s', 'minniyo-chat' ),
-							'<a href="' . esc_url( MINNIYO_CHAT_APP_URL . '/setup-chat-widget' ) . '" target="_blank" rel="noopener noreferrer">Minniyo Dashboard <span class="dashicons dashicons-external"></span></a>'
+							'<a href="' . esc_url( MINNIYO_CHAT_APP_URL . '/widget' ) . '" target="_blank" rel="noopener noreferrer">Minniyo Dashboard <span class="dashicons dashicons-external"></span></a>'
 						);
 						?>
 					</p>
