@@ -1,7 +1,7 @@
 === Minniyo Chat ===
 Contributors: minniyo
 Donate link: https://minniyo.com/
-Tags: chatbot, ai, chat, lead management, live chat, customer support, conversational ai, lead generation
+Tags: chatbot, ai, chat, lead management, live chat
 Requires at least: 5.0
 Tested up to: 6.8
 Stable tag: 1.0.0
