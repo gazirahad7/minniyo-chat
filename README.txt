@@ -1,9 +1,9 @@
 === Minniyo Chat ===
 Contributors: minniyo
 Donate link: https://minniyo.com/
-Tags: chatbot, ai, chat, lead management, customer support, live chat, ai assistant
+Tags: chatbot, ai, chat, lead management,  live chat
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
