@@ -44,6 +44,11 @@
 
             // Update connection status display
             updateConnectionStatus(true);
+
+            // Enable the chatbot if not already enabled
+            if (!$("#minniyo_chat_enabled").is(":checked")) {
+              $("#minniyo_chat_enabled").prop("checked", true);
+            }
           } else {
             showMessage(response.data.message, "error");
 

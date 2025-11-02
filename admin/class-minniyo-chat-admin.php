@@ -113,7 +113,7 @@ class Minniyo_Chat_Admin {
 			'manage_options',
 			'minniyo-chat',
 			array( $this, 'chat_configuration' ),
-			'dashicons-format-chat',
+			plugin_dir_url( __FILE__ ) . 'images/minniyo-icon.png',
 			26
 		);
 	}

@@ -73,7 +73,6 @@ class Minniyo_Chat {
 		$this->plugin_name = 'minniyo-chat';
 
 		$this->load_dependencies();
-		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 	}
@@ -102,12 +101,6 @@ class Minniyo_Chat {
 		require_once plugin_dir_path( __DIR__ ) . 'includes/class-minniyo-chat-loader.php';
 
 		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( __DIR__ ) . 'includes/class-minniyo-chat-i18n.php';
-
-		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( __DIR__ ) . 'admin/class-minniyo-chat-admin.php';
@@ -119,21 +112,6 @@ class Minniyo_Chat {
 		require_once plugin_dir_path( __DIR__ ) . 'public/class-minniyo-chat-public.php';
 
 		$this->loader = new Minniyo_Chat_Loader();
-	}
-
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Minniyo_Chat_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
-		$plugin_i18n = new Minniyo_Chat_I18n();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
 
 	/**

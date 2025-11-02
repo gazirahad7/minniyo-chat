@@ -12,9 +12,10 @@
  */
 
 // Get saved options.
-$api_key          = get_option( 'minniyo_chat_api_key', '' );
-$chatbot_enabled  = get_option( 'minniyo_chat_enabled', '0' );
-$last_test_status = get_option( 'minniyo_chat_test_status', '' );
+$api_key               = get_option( 'minniyo_chat_api_key', '' );
+$chatbot_enabled       = get_option( 'minniyo_chat_enabled', '0' );
+$last_test_status      = get_option( 'minniyo_chat_test_status', '' );
+$show_last_test_status = false;
 
 ?>
 
@@ -80,7 +81,7 @@ $last_test_status = get_option( 'minniyo_chat_test_status', '' );
 				</div>
 
 				<!-- Connection Status -->
-				<?php if ( ! empty( $api_key ) && ! empty( $last_test_status ) ) : ?>
+				<?php if ( $show_last_test_status && ! empty( $api_key ) && ! empty( $last_test_status ) ) : ?>
 					<div class="minniyo-connection-status <?php echo 'success' === $last_test_status ? 'status-success' : 'status-error'; ?>">
 						<?php if ( 'success' === $last_test_status ) : ?>
 							<span class="dashicons dashicons-yes-alt"></span>
