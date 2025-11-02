@@ -1,6 +1,5 @@
 === Minniyo Chat ===
-Contributors: minniyo
-Donate link: https://minniyo.com/
+Contributors: gazirahad7, joydipkirtunia, kmfoysal06
 Tags: chatbot, ai, chat, lead management, live chat
 Requires at least: 5.0
 Tested up to: 6.8
