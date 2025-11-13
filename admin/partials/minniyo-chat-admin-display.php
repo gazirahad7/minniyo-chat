@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get saved options.
-$api_key         = get_option( 'minnch_api_key', '' );
-$chatbot_enabled = get_option( 'minnch_enabled', '0' );
+$minnch_api_key         = get_option( 'minnch_api_key', '' );
+$minnch_chatbot_enabled = get_option( 'minnch_enabled', '0' );
 
 ?>
 
@@ -48,7 +48,7 @@ $chatbot_enabled = get_option( 'minnch_enabled', '0' );
 				<div class="minniyo-form-group minniyo-toggle-section">
 					<div class="minniyo-toggle-container">
 						<label class="minniyo-toggle">
-							<input type="checkbox" id="minnch_enabled" name="minnch_enabled" value="1" <?php checked( $chatbot_enabled, '1' ); ?>>
+							<input type="checkbox" id="minnch_enabled" name="minnch_enabled" value="1" <?php checked( $minnch_chatbot_enabled, '1' ); ?>>
 							<span class="minniyo-toggle-slider"></span>
 						</label>
 						<div class="minniyo-toggle-label">
@@ -79,7 +79,7 @@ $chatbot_enabled = get_option( 'minnch_enabled', '0' );
 						name="minnch_api_key" 
 						class="minniyo-input" 
 						placeholder="<?php esc_attr_e( 'e7257249b770d1d1388*************************', 'minniyo-chat' ); ?>"
-						value="<?php echo esc_attr( $api_key ); ?>"
+						value="<?php echo esc_attr( $minnch_api_key ); ?>"
 					/>
 				</div>
 
