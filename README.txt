@@ -1,5 +1,5 @@
 === Minniyo Chat ===
-Contributors: gazirahad7, joydipkirtunia, kmfoysal06
+Contributors: gazirahad7, shahinmoyshan, kmfoysal06
 Tags: chatbot, ai, chat, lead management, live chat
 Requires at least: 5.0
 Tested up to: 6.8
