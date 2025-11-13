@@ -14,6 +14,45 @@ Connect your Minniyo AI Chatbot to WordPress easily. Convert more leads with AI 
 
 **Minniyo Chat** is a powerful WordPress plugin that seamlessly integrates your Minniyo AI-powered chatbot into your WordPress website. Enhance visitor engagement, provide instant customer support, and capture more leads with intelligent conversational AI.
 
+= Important Notice: Third-Party Service =
+
+**This plugin connects to Minniyo's external service to function.** By using this plugin, you acknowledge that it sends data to and receives data from Minniyo's servers. Please review the information below carefully before installation.
+
+= External Service Usage =
+
+This plugin relies on the Minniyo external service (https://app.minniyo.com) to provide chatbot functionality. The plugin communicates with Minniyo's servers in the following ways:
+
+**What data is sent:**
+* Your Integration API Key (used to identify your chatbot configuration)
+* Website visitor conversations with the chatbot
+* Visitor information that may include: name, email, phone number, or other data voluntarily provided during chat interactions
+* Website URL and referrer information
+* Browser and device information (collected by the embedded chatbot script)
+
+**When data is sent:**
+* When the plugin verifies your API key configuration (during setup and testing)
+* When a visitor interacts with the chatbot on your website
+* Continuously while the chatbot is active on your website
+
+**Why data is sent:**
+* To load and display the customized chatbot widget on your website
+* To process visitor conversations using Minniyo's AI technology
+* To capture and store leads in your Minniyo CRM
+* To provide analytics and reporting on chatbot performance
+
+**Service Endpoints:**
+* Chatbot Embed Service: https://app.minniyo.com/chat/embed/
+* Minniyo Application: https://app.minniyo.com
+
+**Legal Information:**
+* Service Provider: Minniyo
+* Terms of Service: https://minniyo.com/terms-of-service
+* Privacy Policy: https://minniyo.com/privacy-policy
+
+By using this plugin, you agree to Minniyo's Terms of Service and Privacy Policy. You are responsible for ensuring compliance with applicable data protection regulations (such as GDPR, CCPA) when using this service and for informing your website visitors about the data collection and processing through Minniyo's service.
+
+**Note:** A paid Minniyo subscription is required to use this plugin. Visit https://minniyo.com for more information about subscription plans.
+
 = Key Features =
 
 * **Easy Integration** - Connect your Minniyo chatbot in just a few clicks with a simple API key
@@ -54,7 +93,7 @@ Connect your Minniyo AI Chatbot to WordPress easily. Convert more leads with AI 
 = Additional Resources =
 
 * [Official Website](https://minniyo.com)
-* [Minniyo Dashboard](https://app-minniyo.webermelon.dev)
+* [Minniyo Dashboard](https://app.minniyo.com)
 * [Documentation](https://minniyo.com)
 * [Support](mailto:support@minniyo.com)
 
@@ -66,7 +105,7 @@ Connect your Minniyo AI Chatbot to WordPress easily. Convert more leads with AI 
 4. Click **Install Now** button
 5. After installation, click **Activate** button
 6. Go to **Minniyo Chat** in your admin menu
-7. Enter your Integration API Key from [Minniyo Dashboard](https://app-minniyo.webermelon.dev/widget)
+7. Enter your Integration API Key from [Minniyo Dashboard](https://app.minniyo.com/widget)
 8. Toggle **Enable Chatbot** to turn it on
 9. Click **Save Settings**
 
@@ -100,7 +139,7 @@ When visitors interact with your chatbot, all captured leads are automatically s
 
 = Where do I get my API key? =
 
-After subscribing to Minniyo, log in to your [Minniyo Dashboard](https://app-minniyo.webermelon.dev/widget), navigate to the widget settings section, and copy your Integration API Key. Then paste it into the plugin settings in WordPress.
+After subscribing to Minniyo, log in to your [Minniyo Dashboard](https://app.minniyo.com/widget), navigate to the widget settings section, and copy your Integration API Key. Then paste it into the plugin settings in WordPress.
 
 = Can I customize the chatbot for my industry? =
 
@@ -166,14 +205,40 @@ Initial release of Minniyo Chat plugin. Install now to start engaging with your 
 
 == Privacy Policy ==
 
-Minniyo Chat plugin embeds the Minniyo chatbot widget on your WordPress website. The plugin itself does not collect or store any personal data from your website visitors. All interactions with the chatbot are handled by Minniyo's external service.
+**Third-Party Service Disclosure**
+
+Minniyo Chat plugin embeds the Minniyo chatbot widget on your WordPress website by connecting to Minniyo's external service at https://app.minniyo.com. This is essential for the plugin's functionality.
 
 **Data Handling:**
-* The plugin only stores your API key and enable/disable settings in your WordPress database
-* No visitor data is collected or stored by the plugin
-* All chat conversations are processed and stored by Minniyo according to their privacy policy
 
-Please review [Minniyo's Privacy Policy](https://minniyo.com) for information about how they handle user data.
+**Plugin-Stored Data:**
+* The plugin stores only your Integration API Key and chatbot enable/disable settings in your WordPress database
+* No visitor conversation data or personal information is collected or stored by the plugin itself
+
+**Data Sent to Minniyo Service:**
+* All chat conversations between your website visitors and the chatbot are processed by Minniyo's external service
+* Visitor information (such as name, email, phone number) voluntarily provided during chat interactions is sent to Minniyo
+* Website metadata (URL, referrer, timestamp) is transmitted for analytics purposes
+* Browser and device information may be collected by the chatbot embed script
+
+**Data Processing and Storage:**
+* All conversation data is processed and stored on Minniyo's servers according to their privacy policy
+* Lead information is stored in your Minniyo CRM dashboard
+* Conversation history and analytics are maintained by Minniyo's service
+
+**Your Responsibilities:**
+* Inform your website visitors about the use of Minniyo's chatbot service through your privacy policy
+* Ensure compliance with applicable data protection regulations (GDPR, CCPA, etc.)
+* Obtain necessary consent from visitors before collecting personal information through the chatbot
+* Review and comply with Minniyo's Terms of Service and Privacy Policy
+
+**Minniyo's Privacy Policy:**
+For detailed information about how Minniyo collects, uses, and protects user data, please review:
+* Privacy Policy: https://minniyo.com/privacy-policy
+* Terms of Service: https://minniyo.com/terms-of-service
+
+**Data Deletion:**
+To delete data collected through the chatbot, you must contact Minniyo support at support@minniyo.com or manage it through your Minniyo CRM dashboard. Uninstalling this plugin will remove settings from your WordPress database but will not delete data stored on Minniyo's servers.
 
 == Support ==
 

@@ -14,7 +14,7 @@
       e.preventDefault();
 
       const $button = $(this);
-      const apiKey = $("#minniyo_chat_api_key").val().trim();
+      const apiKey = $("#minnch_api_key").val().trim();
 
       // Validate API Key
       if (!apiKey) {
@@ -36,7 +36,7 @@
         data: {
           action: "minniyo_test_connection",
           api_key: apiKey,
-          nonce: minniyo_chat_ajax.nonce,
+          nonce: minnch_ajax.nonce,
         },
         success: function (response) {
           if (response.success) {
@@ -46,8 +46,8 @@
             updateConnectionStatus(true);
 
             // Enable the chatbot if not already enabled
-            if (!$("#minniyo_chat_enabled").is(":checked")) {
-              $("#minniyo_chat_enabled").prop("checked", true);
+            if (!$("#minnch_enabled").is(":checked")) {
+              $("#minnch_enabled").prop("checked", true);
             }
           } else {
             showMessage(response.data.message, "error");
@@ -81,10 +81,8 @@
       e.preventDefault();
 
       const $button = $(this);
-      const apiKey = $("#minniyo_chat_api_key").val().trim();
-      const chatbotEnabled = $("#minniyo_chat_enabled").is(":checked")
-        ? "1"
-        : "0";
+      const apiKey = $("#minnch_api_key").val().trim();
+      const chatbotEnabled = $("#minnch_enabled").is(":checked") ? "1" : "0";
 
       // Validate API Key
       if (!apiKey) {
@@ -106,7 +104,7 @@
           action: "minniyo_save_settings",
           api_key: apiKey,
           chatbot_enabled: chatbotEnabled,
-          nonce: minniyo_chat_ajax.nonce,
+          nonce: minnch_ajax.nonce,
         },
         success: function (response) {
           if (response.success) {
@@ -212,11 +210,11 @@
     /**
      * Toggle effect for enable/disable
      */
-    $("#minniyo_chat_enabled").on("change", function () {
+    $("#minnch_enabled").on("change", function () {
       const isEnabled = $(this).is(":checked");
 
       if (isEnabled) {
-        const apiKey = $("#minniyo_chat_api_key").val().trim();
+        const apiKey = $("#minnch_api_key").val().trim();
 
         if (!apiKey) {
           showMessage(

@@ -9,6 +9,11 @@
  * @subpackage Minniyo_Chat/public
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -52,41 +57,44 @@ class Minniyo_Chat_Public {
 	}
 
 	/**
-	 * Render the chatbot widget in footer
+	 * Enqueue scripts for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
-	public function render_chatbot_widget() {
+	public function enqueue_scripts() {
 		// Check if chatbot is enabled.
-		$chatbot_enabled = get_option( 'minniyo_chat_enabled', '0' );
+		$chatbot_enabled = get_option( 'minnch_enabled', '0' );
 
 		if ( '1' !== $chatbot_enabled ) {
 			return;
 		}
 
 		// Get API key.
-		$api_key = get_option( 'minniyo_chat_api_key', '' );
+		$api_key = get_option( 'minnch_api_key', '' );
 
 		if ( empty( $api_key ) ) {
 			return;
 		}
 
-		// Output the chatbot embed script.
-		$embed_url = MINNIYO_CHAT_APP_EMBED_URL . esc_attr( $api_key );
-		?>
-		<!--Start of Minniyo Script-->
-		<script type="text/javascript">
-		var Minniyo_API=Minniyo_API||{}, Minniyo_LoadStart=new Date();
-		(function(){
-			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-			s1.async=true;
-			s1.src='<?php echo esc_url( $embed_url ); ?>';
-			s1.charset='UTF-8';
-			s1.setAttribute('crossorigin','*');
-			s0.parentNode.insertBefore(s1,s0);
-		})();
-		</script>
-		<!--End of Minniyo Script-->
-		<?php
+		// Enqueue the external chatbot script.
+		$embed_url = MINNCH_APP_EMBED_URL . esc_attr( $api_key );
+
+		// Generate a unique script handle for the embed script.
+		$script_handle = sprintf( '%s-embed', $this->plugin_name );
+
+		wp_enqueue_script(
+			$script_handle,
+			esc_url( $embed_url ),
+			array(),
+			$this->version,
+			array(
+				'strategy'  => 'async',
+				'in_footer' => true,
+			)
+		);
+
+		// Add inline script to initialize the chatbot.
+		$inline_script = 'var Minniyo_API=Minniyo_API||{}, Minniyo_LoadStart=new Date();';
+		wp_add_inline_script( $script_handle, $inline_script, 'before' );
 	}
 }

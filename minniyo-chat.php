@@ -13,9 +13,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Minniyo Chat
- * Plugin URI:        https://minniyo.com
+ * Plugin URI:        https://wordpress.org/plugins/minniyo-chat/
  * Description:       Connect your Minniyo Chatbot in WordPress Easily and Hassle Free.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Minniyo
  * Author URI:        https://minniyo.com/
  * License:           GPL-2.0+
@@ -33,19 +33,19 @@ if ( ! defined( 'WPINC' ) ) {
  * Set up the plugin constants.
  * This is where you can define all the constants used throughout the plugin.
  */
-define( 'MINNIYO_CHAT_VERSION', '1.0.0' );
-define( 'MINNIYO_CHAT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'MINNIYO_CHAT_PLUGIN_URL', plugins_url() . '/minniyo-chat' );
-define( 'MINNIYO_CHAT_APP_URL', 'https://app-minniyo.webermelon.dev' );
-define( 'MINNIYO_CHAT_APP_EMBED_URL', 'https://app-minniyo.webermelon.dev/chat/embed/' );
-define( 'MINNIYO_CHAT_LANDING_PAGE_URL', 'https://minniyo.com' );
-define( 'MINNIYO_CHAT_SUPPORT_EMAIL', 'support@minniyo.com' );
+define( 'MINNCH_VERSION', '1.0.1' );
+define( 'MINNCH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'MINNCH_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'MINNCH_APP_URL', 'https://app.minniyo.com' );
+define( 'MINNCH_APP_EMBED_URL', 'https://app.minniyo.com/chat/embed/' );
+define( 'MINNCH_LANDING_PAGE_URL', 'https://minniyo.com' );
+define( 'MINNCH_SUPPORT_EMAIL', 'support@minniyo.com' );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-minniyo-chat-activator.php
  */
-function activate_minniyo_chat() {
+function minnch_activate_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-minniyo-chat-activator.php';
 	Minniyo_Chat_Activator::activate();
 }
@@ -54,13 +54,13 @@ function activate_minniyo_chat() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-minniyo-chat-deactivator.php
  */
-function deactivate_minniyo_chat() {
+function minnch_deactivate_plugin() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-minniyo-chat-deactivator.php';
 	Minniyo_Chat_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_minniyo_chat' );
-register_deactivation_hook( __FILE__, 'deactivate_minniyo_chat' );
+register_activation_hook( __FILE__, 'minnch_activate_plugin' );
+register_deactivation_hook( __FILE__, 'minnch_deactivate_plugin' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -77,9 +77,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-minniyo-chat.php';
  *
  * @since    1.0.0
  */
-function run_minniyo_chat() {
+function minnch_run() {
 	$plugin = new Minniyo_Chat();
 	$plugin->run();
 }
 
-run_minniyo_chat(); // Kick off the plugin.
+minnch_run(); // Kick off the plugin.

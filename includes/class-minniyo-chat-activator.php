@@ -9,6 +9,11 @@
  * @subpackage Minniyo_Chat/includes
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Fired during plugin activation.
  *

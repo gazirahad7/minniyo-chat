@@ -9,6 +9,11 @@
  * @subpackage Minniyo_Chat/admin
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -78,9 +83,9 @@ class Minniyo_Chat_Admin {
 		// Pass nonce and AJAX URL to JavaScript.
 		wp_localize_script(
 			$this->plugin_name,
-			'minniyo_chat_ajax',
+			'minnch_ajax',
 			array(
-				'nonce' => wp_create_nonce( 'minniyo_chat_nonce' ),
+				'nonce' => wp_create_nonce( 'minnch_nonce' ),
 			)
 		);
 	}
@@ -134,7 +139,7 @@ class Minniyo_Chat_Admin {
 	 */
 	public function ajax_test_connection() {
 		// Verify nonce.
-		check_ajax_referer( 'minniyo_chat_nonce', 'nonce' );
+		check_ajax_referer( 'minnch_nonce', 'nonce' );
 
 		// Check user permissions.
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -157,7 +162,7 @@ class Minniyo_Chat_Admin {
 		}
 
 		// Test the connection.
-		$embed_url = MINNIYO_CHAT_APP_EMBED_URL . $api_key;
+		$embed_url = MINNCH_APP_EMBED_URL . $api_key;
 		$response  = wp_remote_get(
 			$embed_url,
 			array(
@@ -192,18 +197,12 @@ class Minniyo_Chat_Admin {
 		$response_code = wp_remote_retrieve_response_code( $response );
 
 		if ( 200 === $response_code ) {
-			// Save test status.
-			update_option( 'minniyo_chat_test_status', 'success' );
-
 			wp_send_json_success(
 				array(
 					'message' => __( 'Connection successful! Your chatbot is configured correctly.', 'minniyo-chat' ),
 				)
 			);
 		} else {
-			// Save test status.
-			update_option( 'minniyo_chat_test_status', 'error' );
-
 			wp_send_json_error(
 				array(
 					'message' => sprintf(
@@ -228,7 +227,7 @@ class Minniyo_Chat_Admin {
 	 */
 	public function ajax_save_settings() {
 		// Verify nonce.
-		check_ajax_referer( 'minniyo_chat_nonce', 'nonce' );
+		check_ajax_referer( 'minnch_nonce', 'nonce' );
 
 		// Check user permissions.
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -252,8 +251,8 @@ class Minniyo_Chat_Admin {
 		}
 
 		// Save options.
-		update_option( 'minniyo_chat_api_key', $api_key );
-		update_option( 'minniyo_chat_enabled', $chatbot_enabled );
+		update_option( 'minnch_api_key', $api_key );
+		update_option( 'minnch_enabled', $chatbot_enabled );
 
 		wp_send_json_success(
 			array(

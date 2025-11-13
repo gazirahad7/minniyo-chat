@@ -12,6 +12,11 @@
  * @subpackage Minniyo_Chat/includes
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The core plugin class.
  *
@@ -65,8 +70,8 @@ class Minniyo_Chat {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'MINNIYO_CHAT_VERSION' ) ) {
-			$this->version = MINNIYO_CHAT_VERSION;
+		if ( defined( 'MINNCH_VERSION' ) ) {
+			$this->version = MINNCH_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -143,8 +148,8 @@ class Minniyo_Chat {
 	private function define_public_hooks() {
 		$plugin_public = new Minniyo_Chat_Public( $this->get_plugin_name(), $this->get_version() );
 
-		// Render chatbot widget in footer.
-		$this->loader->add_action( 'wp_footer', $plugin_public, 'render_chatbot_widget' );
+		// Enqueue chatbot scripts.
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 	}
 
 	/**
