@@ -8,7 +8,7 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Connect your Minniyo AI Chatbot to WordPress easily. Convert more leads with AI Chat + Powerful Lead Management.
+Connect your Minniyo AI Chatbot to WordPress easily. Capture, Qualify & Convert Leads Automatically with Minniyo’s All-in-One System.
 
 == Description ==
 
