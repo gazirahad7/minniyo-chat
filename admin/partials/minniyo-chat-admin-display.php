@@ -29,7 +29,7 @@ $minnch_chatbot_enabled = get_option( 'minnch_enabled', '0' );
 		</div>
 		<div class="minniyo-chat-branding">
 			<h1>Minniyo</h1>
-			<p class="minniyo-tagline">Convert More Leads with AI Chat + Powerful Lead Management</p>
+			<p class="minniyo-tagline">Capture, Qualify & Convert Leads Automatically with Minniyo’s All-in-One System</p>
 		</div>
 	</div>
 
